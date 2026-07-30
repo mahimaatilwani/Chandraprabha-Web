@@ -1,0 +1,458 @@
+/* ==========================================================================
+   ABOUT US PAGE - PREMIUM LIFESTYLE EDITORIAL STYLESHEET
+   ========================================================================== */
+
+/* --- Custom Variables --- */
+:root {
+    --font-editorial: 'Cormorant Garamond', serif;
+    --transition-slow: all 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+    --transition-medium: all 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+    --color-green: #2E4A3F;
+    --color-cream-light: #FAF8F3;
+    --color-cream-dark: #F2EDE4;
+    --color-charcoal: #1A2520;
+    --color-gold: #D4A355;
+    --color-gold-hover: #C4903A;
+    --color-sand-border: #E8D8B8;
+}
+
+/* --- Core Page Sections --- */
+.about-editorial-section {
+    padding: 8rem 0;
+    overflow: hidden;
+}
+
+.about-editorial-section.bg-light-cream {
+    background-color: var(--color-cream-light);
+}
+
+.about-editorial-section.bg-sand {
+    background-color: var(--color-cream-dark);
+}
+
+/* --- Beginning section: compact to fit one screen --- */
+.about-section-beginning {
+    padding: 4rem 0;
+}
+
+.about-section-beginning .editorial-grid-left-img {
+    gap: 4rem;
+    min-height: calc(100vh - 8rem);
+    align-items: center;
+}
+
+.about-section-beginning .editorial-img-wrapper.aspect-portrait {
+    aspect-ratio: 16 / 11;
+    max-height: 55vh;
+}
+
+/* ==========================================================================
+   HERO BANNER
+   ========================================================================== */
+.about-hero-banner {
+    position: relative;
+    height: 65vh;
+    min-height: 480px;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--bg-dark);
+    text-align: center;
+    padding-top: 100px; /* Offset for floating navigation */
+}
+
+.about-hero-bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    transform: scale(1.05);
+    transition: transform 0.1s ease-out;
+    z-index: 1;
+}
+
+.about-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to bottom, 
+        rgba(46, 74, 63, 0.45) 0%, 
+        rgba(26, 37, 32, 0.85) 100%
+    );
+    z-index: 2;
+}
+
+.about-hero-content {
+    position: relative;
+    z-index: 3;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 0 1.5rem;
+    color: var(--white);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.about-hero-content.loaded {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.about-hero-content h1 {
+    font-family: var(--font-heading);
+    font-size: clamp(2.5rem, 6vw, 4.2rem);
+    font-weight: 700;
+    margin-bottom: 0.8rem;
+    color: var(--white);
+    letter-spacing: -0.01em;
+    text-transform: none;
+}
+
+.about-hero-content p {
+    font-family: var(--font-editorial);
+    font-size: clamp(1.1rem, 2.2vw, 1.5rem);
+    font-weight: 300;
+    color: var(--white);
+    margin-bottom: 0;
+    line-height: 1.45;
+}
+
+/* ==========================================================================
+   EDITORIAL BLOCKS & GRID STYLES
+   ========================================================================== */
+.editorial-grid-left-img,
+.editorial-grid-right-img {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 7rem;
+    align-items: center;
+}
+
+.editorial-img-wrapper {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: var(--shadow-sm);
+    background-color: var(--color-cream-dark);
+}
+
+.editorial-img-wrapper.aspect-portrait {
+    aspect-ratio: 4 / 5;
+}
+
+.editorial-img-wrapper.aspect-landscape {
+    aspect-ratio: 1.4 / 1;
+}
+
+.editorial-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: var(--transition-slow);
+}
+
+.editorial-grid-left-img:hover .editorial-img-wrapper img,
+.editorial-grid-right-img:hover .editorial-img-wrapper img {
+    transform: scale(1.04);
+}
+
+.editorial-content-col {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.editorial-eyebrow {
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    color: var(--color-gold);
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.editorial-heading {
+    font-family: var(--font-heading);
+    font-size: clamp(2rem, 4.5vw, 3rem);
+    font-weight: 300;
+    color: var(--color-charcoal);
+    margin-bottom: 1.5rem;
+    line-height: 1.25;
+}
+
+.editorial-desc {
+    font-family: var(--font-body);
+    font-size: 1.05rem;
+    line-height: 1.85;
+    color: var(--text-dark);
+    opacity: 0.9;
+    margin: 0;
+}
+
+/* ==========================================================================
+   SECTION 2 — INSPIRED BY RAJASTHAN (PANORAMIC)
+   ========================================================================== */
+.editorial-centered {
+    max-width: 850px;
+    margin: 0 auto 4.5rem;
+    text-align: center;
+}
+
+.editorial-centered h2 {
+    font-family: var(--font-heading);
+    font-size: clamp(2.2rem, 5vw, 3.4rem);
+    font-weight: 300;
+    color: var(--color-charcoal);
+    margin-bottom: 1.5rem;
+}
+
+.editorial-panoramic-wrapper {
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto 4.5rem;
+    border-radius: 12px;
+    overflow: hidden;
+    height: 48vh;
+    min-height: 350px;
+    box-shadow: var(--shadow-sm);
+}
+
+.editorial-panoramic-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: var(--transition-slow);
+}
+
+.editorial-panoramic-wrapper:hover img {
+    transform: scale(1.03);
+}
+
+.horizontal-highlights-list {
+    display: flex;
+    justify-content: center;
+    gap: 6rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.horizontal-highlight-item {
+    font-family: var(--font-heading);
+    font-size: 1.4rem;
+    font-weight: 300;
+    font-style: italic;
+    color: var(--color-charcoal);
+}
+
+/* ==========================================================================
+   SECTION 3 — DESIGNED AROUND NATURE (HIGHLIGHTS)
+   ========================================================================== */
+.nature-highlights-list {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+    padding: 0;
+    margin: 2.2rem 0 0;
+}
+
+.nature-highlight-item {
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--color-gold);
+}
+
+/* ==========================================================================
+   SECTION 4 — MEET THE FOUNDER
+   ========================================================================== */
+.founder-editorial-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 7rem;
+    align-items: center;
+}
+
+.founder-portrait-wrapper {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: var(--shadow-sm);
+    aspect-ratio: 4 / 5;
+    max-width: 480px;
+    margin: 0 auto;
+}
+
+.founder-portrait-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: var(--transition-slow);
+}
+
+.founder-editorial-grid:hover .founder-portrait-wrapper img {
+    transform: scale(1.03);
+}
+
+.founder-editorial-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.founder-signature {
+    font-family: var(--font-editorial);
+    font-size: clamp(2rem, 3.5vw, 2.5rem);
+    font-style: italic;
+    color: var(--color-gold);
+    margin-top: 1.8rem;
+    display: block;
+    line-height: 1;
+}
+
+.founder-designation {
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--text-dark);
+    opacity: 0.7;
+    display: block;
+    margin-top: 0.4rem;
+}
+
+/* ==========================================================================
+   SECTION 5 — BEGIN YOUR JOURNEY (CTA)
+   ========================================================================== */
+.about-cta-section {
+    position: relative;
+    padding: 9rem 0;
+    background-color: var(--color-green);
+    text-align: center;
+    overflow: hidden;
+}
+
+.about-cta-bg {
+    position: absolute;
+    inset: 0;
+    background-image: url('https://images.unsplash.com/photo-1544161515-4ab6ce6db874?q=80&w=1600&auto=format&fit=crop');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.15; /* Subtle scenic background image */
+    z-index: 1;
+    transition: var(--transition-slow);
+}
+
+.about-cta-section:hover .about-cta-bg {
+    transform: scale(1.04);
+}
+
+.about-cta-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(26, 37, 32, 0.45); /* Dark tint */
+    z-index: 2;
+}
+
+.about-cta-content {
+    position: relative;
+    z-index: 3;
+    max-width: 700px;
+    margin: 0 auto;
+    color: var(--white);
+    padding: 0 1.5rem;
+}
+
+.about-cta-title {
+    font-family: var(--font-heading);
+    font-size: clamp(2rem, 4.5vw, 3.2rem);
+    font-weight: 300;
+    margin-bottom: 1rem;
+    color: var(--white);
+}
+
+.about-cta-subtitle {
+    font-family: var(--font-editorial);
+    font-size: clamp(1.1rem, 2vw, 1.4rem);
+    font-style: italic;
+    color: var(--text-light-muted);
+    margin-bottom: 2.8rem;
+    display: block;
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN
+   ========================================================================== */
+@media (max-width: 991px) {
+    .about-editorial-section {
+        padding: 6rem 0;
+    }
+
+    .editorial-grid-left-img,
+    .editorial-grid-right-img,
+    .founder-editorial-grid {
+        grid-template-columns: 1fr;
+        gap: 3.5rem;
+    }
+
+    .editorial-img-wrapper,
+    .founder-portrait-wrapper {
+        aspect-ratio: 16 / 11;
+        max-width: 650px;
+        margin: 0 auto;
+    }
+
+    .editorial-grid-right-img .editorial-img-wrapper,
+    .founder-portrait-wrapper {
+        order: -1; /* Image stacked first */
+    }
+
+    .editorial-panoramic-wrapper {
+        height: 38vh;
+        min-height: 280px;
+        margin-bottom: 3rem;
+    }
+
+    .horizontal-highlights-list {
+        gap: 3.5rem;
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 767px) {
+    .about-editorial-section {
+        padding: 4.5rem 0;
+    }
+
+    .editorial-panoramic-wrapper {
+        height: 28vh;
+        min-height: 220px;
+    }
+
+    .horizontal-highlights-list {
+        flex-direction: column;
+        gap: 1.5rem;
+        align-items: center;
+    }
+
+    .nature-highlights-list {
+        justify-content: center;
+        gap: 1.5rem;
+        flex-wrap: wrap;
+    }
+
+    .about-cta-section {
+        padding: 6.5rem 0;
+    }
+}

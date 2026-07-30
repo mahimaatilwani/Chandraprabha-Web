@@ -1,0 +1,478 @@
+/* ==========================================================================
+   CONTACT US PAGE - LUXURY DESIGN SYSTEM
+   ========================================================================== */
+
+/* --- Custom variables override if needed --- */
+:root {
+    --transition-slow: all 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+    --transition-medium: all 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.contact-section {
+    padding: 8rem 0;
+    overflow: hidden;
+}
+
+.contact-section.bg-light-cream {
+    background-color: var(--bg-light-accent);
+}
+
+.contact-section.bg-sand {
+    background-color: var(--bg-light);
+}
+
+/* ==========================================================================
+   HERO BANNER
+   ========================================================================== */
+.contact-hero-banner {
+    position: relative;
+    height: 65vh;
+    min-height: 480px;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--bg-dark);
+    text-align: center;
+    padding-top: 100px; /* Offset for floating navigation */
+}
+
+.contact-hero-bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    transform: scale(1.05);
+    transition: transform 0.1s ease-out;
+    z-index: 1;
+}
+
+.contact-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to bottom, 
+        rgba(46, 74, 63, 0.45) 0%, 
+        rgba(26, 37, 32, 0.85) 100%
+    );
+    z-index: 2;
+}
+
+.contact-hero-content {
+    position: relative;
+    z-index: 3;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 0 1.5rem;
+    color: var(--white);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.contact-hero-content.loaded {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.contact-hero-content h1 {
+    font-family: var(--font-heading);
+    font-size: clamp(2.5rem, 6vw, 4.2rem);
+    font-weight: 700;
+    margin-bottom: 0.8rem;
+    color: var(--white);
+    letter-spacing: -0.01em;
+    text-transform: none;
+}
+
+.contact-hero-content p {
+    font-family: var(--font-body);
+    font-size: clamp(1.1rem, 2.2vw, 1.4rem);
+    font-weight: 300;
+    color: var(--white);
+    margin-bottom: 0;
+    line-height: 1.5;
+}
+
+/* ==========================================================================
+   SECTION 1 — GET IN TOUCH (2-COLUMN GRID)
+   ========================================================================== */
+.contact-section-get-in-touch {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem 0;
+    box-sizing: border-box;
+}
+
+.get-in-touch-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 5rem;
+    align-items: center;
+    width: 100%;
+}
+
+.contact-editorial-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1.3rem;
+}
+
+.contact-eyebrow {
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    color: var(--primary);
+    margin-bottom: 0.3rem;
+    display: block;
+}
+
+.contact-heading {
+    font-family: var(--font-heading);
+    font-size: clamp(2rem, 3.8vw, 2.5rem);
+    font-weight: 300;
+    color: var(--text-headings);
+    line-height: 1.25;
+    margin-bottom: 0;
+}
+
+.contact-info-item {
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.contact-info-item:last-of-type {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.contact-info-label {
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--primary);
+    margin-bottom: 0.4rem;
+    display: block;
+}
+
+.contact-info-value {
+    font-family: var(--font-body);
+    font-size: clamp(1rem, 1.8vw, 1.15rem);
+    color: var(--text-headings);
+    line-height: 1.5;
+}
+
+.contact-info-value a {
+    color: inherit;
+    text-decoration: none;
+    transition: var(--transition-fast);
+}
+
+.contact-info-value a:hover {
+    color: var(--primary-hover);
+}
+
+.contact-social-icons {
+    display: flex;
+    gap: 1.2rem;
+    margin-top: 0.5rem;
+}
+
+.contact-social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border: 1px solid var(--border-color);
+    border-radius: 50%;
+    color: var(--text-dark);
+    font-size: 1rem;
+    text-decoration: none;
+    transition: var(--transition-smooth);
+}
+
+.contact-social-link:hover {
+    background-color: var(--primary);
+    border-color: var(--primary);
+    color: var(--white);
+    transform: translateY(-3px);
+}
+
+/* --- Premium Contact Form --- */
+.contact-form-container {
+    background-color: var(--white);
+    padding: 2.2rem 2.8rem;
+    border-radius: 12px;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid rgba(232, 216, 184, 0.4);
+}
+
+.contact-form-title {
+    font-family: var(--font-heading);
+    font-size: 1.6rem;
+    font-weight: 300;
+    color: var(--text-headings);
+    margin-bottom: 1.2rem;
+}
+
+.contact-form-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.1rem;
+}
+
+.contact-form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.contact-form-group label {
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text-dark);
+    opacity: 0.85;
+}
+
+.contact-form-group input,
+.contact-form-group textarea {
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    padding: 0.7rem 0.95rem;
+    border: 1px solid var(--border-color);
+    background-color: var(--bg-light-accent);
+    border-radius: 8px;
+    color: var(--text-headings);
+    transition: var(--transition-fast);
+    outline: none;
+}
+
+.contact-form-group input:focus,
+.contact-form-group textarea:focus {
+    border-color: var(--primary);
+    background-color: var(--white);
+    box-shadow: 0 0 0 3px rgba(212, 163, 85, 0.15);
+}
+
+.contact-form-group textarea {
+    resize: vertical;
+    min-height: 95px;
+}
+
+.contact-submit-btn {
+    margin-top: 0.4rem;
+    width: 100%;
+    padding: 0.85rem;
+    font-family: var(--font-body);
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+/* ==========================================================================
+   SECTION 2 — VISIT CHANDRAPRABHA
+   ========================================================================== */
+.visit-chandraprabha-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 6rem;
+    align-items: center;
+}
+
+.map-container-wrapper {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    height: 480px;
+    border: 1px solid var(--border-color);
+}
+
+.map-container-wrapper iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    display: block;
+}
+
+.location-details-col {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.travel-times-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.travel-time-item {
+    display: flex;
+    gap: 1.2rem;
+    align-items: flex-start;
+}
+
+.travel-time-icon {
+    color: var(--primary);
+    font-size: 1.15rem;
+    margin-top: 0.2rem;
+}
+
+.travel-time-text strong {
+    color: var(--text-headings);
+    font-family: var(--font-body);
+    font-weight: 600;
+    display: block;
+    margin-bottom: 0.2rem;
+    font-size: 0.95rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.travel-time-text span {
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    color: var(--text-dark);
+    line-height: 1.5;
+    display: block;
+}
+
+/* ==========================================================================
+   SECTION 3 — NEED IMMEDIATE ASSISTANCE
+   ========================================================================== */
+.assistance-centered-content {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.assistance-centered-content h2 {
+    font-family: var(--font-heading);
+    font-size: clamp(2.2rem, 5vw, 3.4rem);
+    font-weight: 300;
+    color: var(--text-headings);
+    margin-bottom: 1.5rem;
+}
+
+.assistance-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4rem;
+    margin-top: 4.5rem;
+}
+
+.assistance-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1.2rem;
+}
+
+.assistance-icon-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: var(--bg-light-accent);
+    border: 1px solid var(--border-color);
+    color: var(--primary);
+    font-size: 1.6rem;
+    text-decoration: none;
+    transition: var(--transition-smooth);
+}
+
+.assistance-icon-link:hover {
+    background-color: var(--primary);
+    border-color: var(--primary);
+    color: var(--white);
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-sm);
+}
+
+.assistance-item-title {
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text-headings);
+}
+
+.assistance-item-desc {
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--text-dark);
+    opacity: 0.9;
+    max-width: 260px;
+    margin: 0;
+}
+
+/* ==========================================================================
+   RESPONSIVE BREAKPOINTS
+   ========================================================================== */
+@media (max-width: 991px) {
+    .contact-section {
+        padding: 6rem 0;
+    }
+
+    .get-in-touch-grid {
+        grid-template-columns: 1fr;
+        gap: 4.5rem;
+    }
+
+    .visit-chandraprabha-grid {
+        grid-template-columns: 1fr;
+        gap: 4.5rem;
+    }
+
+    .visit-chandraprabha-grid .map-container-wrapper {
+        order: 2; /* Map placed below details on tablet/mobile */
+        height: 400px;
+    }
+
+    .location-details-col {
+        order: 1;
+    }
+
+    .assistance-grid {
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 767px) {
+    .contact-section {
+        padding: 4.5rem 0;
+    }
+
+    .contact-form-container {
+        padding: 2.2rem 1.8rem;
+    }
+
+    .assistance-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        margin-top: 3.5rem;
+    }
+
+    .visit-chandraprabha-grid .map-container-wrapper {
+        height: 320px;
+    }
+}

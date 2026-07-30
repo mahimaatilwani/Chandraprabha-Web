@@ -1,0 +1,797 @@
+/* ==========================================================================
+   JAWAI DESTINATION PAGE - PREMIUM EDITORIAL STYLESHEET
+   ========================================================================== */
+
+/* --- Custom Variables --- */
+:root {
+    --font-editorial: 'Cormorant Garamond', serif;
+    --transition-slow: all 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+    --transition-medium: all 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+    --color-green: #2E4A3F;
+    --color-cream-light: #FAF8F3;
+    --color-cream-dark: #F2EDE4;
+    --color-charcoal: #1A2520;
+    --color-gold: #D4A355;
+    --color-gold-hover: #C4903A;
+    --color-sand-border: #E8D8B8;
+}
+
+/* --- Section Formatting --- */
+.jawai-editorial-section {
+    padding: 8rem 0;
+    overflow: hidden;
+}
+
+.bg-light-cream {
+    background-color: var(--color-cream-light);
+}
+
+.bg-sand {
+    background-color: var(--color-cream-dark);
+}
+
+.bg-dark-forest {
+    background-color: var(--bg-dark-accent);
+    color: var(--white);
+}
+
+.bg-dark-forest .editorial-title,
+.bg-dark-forest .editorial-lead {
+    color: var(--white);
+}
+
+.bg-dark-forest .editorial-body {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+/* --- Typography Enhancements --- */
+.editorial-title {
+    font-family: var(--font-editorial);
+    font-size: clamp(2.4rem, 4.5vw, 3.8rem);
+    font-weight: 300;
+    color: var(--color-charcoal);
+    line-height: 1.15;
+    margin-bottom: 1.8rem;
+}
+
+.editorial-title span {
+    font-style: italic;
+    font-weight: 400;
+    color: var(--color-gold);
+}
+
+.editorial-sub {
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    color: var(--color-gold);
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.editorial-lead {
+    font-family: var(--font-editorial);
+    font-size: 1.45rem;
+    font-style: italic;
+    line-height: 1.6;
+    color: var(--text-dark);
+    margin-bottom: 2rem;
+    font-weight: 400;
+}
+
+.editorial-body {
+    font-family: var(--font-body);
+    font-size: 1.05rem;
+    line-height: 1.85;
+    color: var(--text-dark);
+    opacity: 0.9;
+    margin-bottom: 2rem;
+}
+
+/* Link Style */
+.editorial-text-link {
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--color-charcoal);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: var(--transition-fast);
+    padding-bottom: 4px;
+    border-bottom: 1px solid var(--color-gold);
+}
+
+.editorial-text-link:hover {
+    color: var(--color-gold);
+    gap: 0.8rem;
+    border-bottom-color: var(--color-gold-hover);
+}
+
+/* ==========================================================================
+   SECTION 1 - HERO BANNER (PANORAMIC BREADCRUMB STYLE)
+   ========================================================================== */
+.safari-intro-banner {
+    position: relative;
+    height: 50vh;
+    min-height: 400px;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    background-color: var(--bg-dark);
+}
+
+.safari-banner-bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    transform: scale(1.05);
+    transition: transform 0.1s ease-out;
+    z-index: 1;
+}
+
+.safari-banner-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, 
+        rgba(26, 37, 32, 0.75) 0%, 
+        rgba(26, 37, 32, 0.5) 50%, 
+        rgba(26, 37, 32, 0.2) 100%);
+    z-index: 2;
+}
+
+.safari-banner-content {
+    position: relative;
+    z-index: 3;
+    max-width: 700px;
+    padding-left: 2rem;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.safari-banner-content.loaded {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.safari-breadcrumbs {
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--primary);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.safari-breadcrumbs a {
+    color: rgba(255, 255, 255, 0.7);
+    transition: var(--transition-fast);
+}
+
+.safari-breadcrumbs a:hover {
+    color: var(--primary);
+}
+
+.safari-breadcrumbs span {
+    color: var(--primary);
+}
+
+.safari-banner-title {
+    font-family: var(--font-editorial);
+    font-size: clamp(3rem, 6vw, 4.8rem);
+    font-weight: 300;
+    color: var(--white);
+    line-height: 1.05;
+    margin-bottom: 0.5rem;
+}
+
+.safari-banner-desc {
+    font-family: var(--font-editorial);
+    font-size: clamp(1.2rem, 2vw, 1.6rem);
+    font-style: italic;
+    color: var(--text-light-muted);
+    margin-bottom: 2.5rem;
+}
+
+/* ==========================================================================
+   SECTION 2 - THE ESSENCE OF JAWAI
+   ========================================================================== */
+.essence-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    align-items: center;
+}
+
+.essence-img-col {
+    position: relative;
+}
+
+.essence-img-wrapper {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: var(--shadow-lg);
+    aspect-ratio: 4 / 5;
+    background-color: var(--color-cream-dark);
+}
+
+.essence-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition-slow);
+}
+
+.essence-img-wrapper:hover img {
+    transform: scale(1.06);
+}
+
+/* ==========================================================================
+   SECTION 3 - FOUR PERSPECTIVES
+   ========================================================================== */
+.perspectives-container {
+    display: flex;
+    flex-direction: column;
+    gap: 8rem;
+}
+
+.perspective-block {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    align-items: center;
+}
+
+.perspective-block:nth-child(even) .perspective-img-col {
+    order: 2;
+}
+
+.perspective-block:nth-child(even) .perspective-content-col {
+    order: 1;
+}
+
+.perspective-img-wrapper {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: var(--shadow-md);
+    aspect-ratio: 16 / 10;
+    background-color: var(--color-cream-dark);
+}
+
+.perspective-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition-slow);
+}
+
+.perspective-img-wrapper:hover img {
+    transform: scale(1.05);
+}
+
+/* ==========================================================================
+   SECTION 5 - SEASONS OF JAWAI
+   ========================================================================== */
+.seasons-container {
+    margin-top: 4rem;
+}
+
+.seasons-timeline {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.season-card {
+    background-color: var(--color-cream-light);
+    border: 1px solid var(--color-sand-border);
+    border-radius: 8px;
+    padding: 3rem 2.5rem;
+    position: relative;
+    transition: var(--transition-medium);
+    overflow: hidden;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 450px;
+}
+
+.season-card-bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    z-index: -1;
+    transition: var(--transition-medium);
+    transform: scale(1.08);
+}
+
+.season-card-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, 
+        rgba(26, 37, 32, 0.2) 0%, 
+        rgba(26, 37, 32, 0.75) 60%, 
+        rgba(26, 37, 32, 0.95) 100%);
+    z-index: -1;
+    opacity: 0;
+    transition: var(--transition-medium);
+}
+
+.season-header-block h3 {
+    font-family: var(--font-editorial);
+    font-size: clamp(2rem, 3vw, 2.8rem);
+    font-weight: 300;
+    color: var(--color-charcoal);
+    margin-bottom: 0.5rem;
+    transition: var(--transition-medium);
+}
+
+.season-months {
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--color-gold);
+    display: block;
+    margin-bottom: 2rem;
+}
+
+.season-features {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    margin-top: 1.5rem;
+}
+
+.season-feature-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.8rem;
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    color: var(--text-dark);
+    line-height: 1.5;
+    transition: var(--transition-medium);
+}
+
+.season-feature-item i {
+    color: var(--color-gold);
+    margin-top: 0.25rem;
+    font-size: 0.9rem;
+    transition: var(--transition-medium);
+}
+
+/* Season Hover Effects */
+.season-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
+    border-color: transparent;
+}
+
+.season-card:hover .season-card-bg {
+    opacity: 0.45;
+    transform: scale(1);
+}
+
+.season-card:hover .season-card-overlay {
+    opacity: 1;
+}
+
+.season-card:hover .season-header-block h3 {
+    color: var(--white);
+}
+
+.season-card:hover .season-feature-item {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.season-card:hover .season-feature-item i {
+    color: var(--white);
+}
+
+/* Specific background styles for timeline cards (will fade in on hover) */
+.season-winter .season-card-bg {
+    background-image: url('https://images.unsplash.com/photo-1590001155093-a3c66ab0c3ff?q=80&w=600&auto=format&fit=crop');
+}
+
+.season-summer .season-card-bg {
+    background-image: url('https://chandraprabharesort.com/images/about-jawai/Jawai-Hills.webp');
+}
+
+.season-monsoon .season-card-bg {
+    background-image: url('https://images.unsplash.com/photo-1542718610-a1d656d1884c?q=80&w=600&auto=format&fit=crop');
+}
+
+/* ==========================================================================
+   SECTION 6 - EXPLORE WITH CHANDRAPRABHA
+   ========================================================================== */
+.explore-chandraprabha-section {
+    position: relative;
+    padding: 10rem 0;
+    background-color: var(--bg-dark-accent);
+    color: var(--white);
+    overflow: hidden;
+}
+
+.explore-cp-bg {
+    position: absolute;
+    inset: 0;
+    background-image: url('https://r1imghtlak.mmtcdn.com/463faa20283e11ed92660a58a9feac02.jpeg');
+    background-size: cover;
+    background-position: center;
+    transform: scale(1.03);
+    z-index: 1;
+    opacity: 0.28;
+}
+
+.explore-cp-overlay {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at center, rgba(26, 37, 32, 0.75) 0%, rgba(26, 37, 32, 0.95) 100%);
+    z-index: 2;
+}
+
+.explore-cp-content-wrapper {
+    position: relative;
+    z-index: 3;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.explore-cp-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem 4rem;
+    margin-top: 4rem;
+    text-align: left;
+}
+
+.explore-cp-item h4 {
+    font-family: var(--font-editorial);
+    font-size: 1.6rem;
+    font-weight: 300;
+    color: var(--color-gold);
+    margin-bottom: 0.8rem;
+    letter-spacing: 0.05em;
+}
+
+.explore-cp-item p {
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.8);
+    margin: 0;
+}
+
+/* ==========================================================================
+   SECTION 7 - TRAVEL INFORMATION
+   ========================================================================== */
+.travel-info-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+    margin-top: 4rem;
+}
+
+.travel-info-block {
+    background-color: var(--color-cream-light);
+    border: 1px solid var(--color-sand-border);
+    padding: 3rem 2.5rem;
+    border-radius: 8px;
+    transition: var(--transition-medium);
+}
+
+.travel-info-block:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--color-gold);
+}
+
+.travel-info-block h4 {
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--color-gold);
+    margin-bottom: 1.5rem;
+}
+
+.travel-info-block p {
+    font-family: var(--font-body);
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: var(--text-dark);
+    margin-bottom: 0;
+}
+
+.travel-info-block p strong {
+    font-family: var(--font-editorial);
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: var(--color-charcoal);
+    display: block;
+    margin-bottom: 0.4rem;
+}
+
+/* ==========================================================================
+   SECTION 8 - FAQ (ACCORDION)
+   ========================================================================== */
+.faq-wrapper {
+    max-width: 850px;
+    margin: 4rem auto 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.faq-item {
+    background-color: var(--color-cream-light);
+    border: 1px solid var(--color-sand-border);
+    border-radius: 6px;
+    overflow: hidden;
+    transition: var(--transition-fast);
+}
+
+.faq-item:hover {
+    border-color: var(--color-gold);
+}
+
+.faq-question-btn {
+    width: 100%;
+    background: none;
+    border: none;
+    padding: 1.8rem 2.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    text-align: left;
+    outline: none;
+}
+
+.faq-question-btn h4 {
+    font-family: var(--font-editorial);
+    font-size: 1.35rem;
+    font-weight: 400;
+    color: var(--color-charcoal);
+    margin: 0;
+    transition: var(--transition-fast);
+}
+
+.faq-icon-wrapper {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 1px solid var(--color-sand-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-gold);
+    transition: var(--transition-medium);
+}
+
+.faq-icon-wrapper i {
+    font-size: 0.8rem;
+    transition: transform 0.4s ease;
+}
+
+/* Answer block using grid-template-rows animation (highly performant & clean) */
+.faq-answer-container {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.faq-answer-content {
+    overflow: hidden;
+}
+
+.faq-answer-inner {
+    padding: 0 2.5rem 2rem 2.5rem;
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    line-height: 1.8;
+    color: var(--text-dark);
+}
+
+/* Active State Styles */
+.faq-item.active {
+    border-color: var(--color-gold);
+    background-color: var(--color-cream-light);
+    box-shadow: var(--shadow-sm);
+}
+
+.faq-item.active .faq-question-btn h4 {
+    color: var(--color-gold-hover);
+}
+
+.faq-item.active .faq-icon-wrapper {
+    background-color: var(--color-gold);
+    border-color: var(--color-gold);
+    color: var(--white);
+}
+
+.faq-item.active .faq-icon-wrapper i {
+    transform: rotate(45deg);
+}
+
+.faq-item.active .faq-answer-container {
+    grid-template-rows: 1fr;
+}
+
+/* ==========================================================================
+   SECTION 9 - FINAL CTA (CINEMATIC closing experience)
+   ========================================================================== */
+.jawai-final-cta {
+    position: relative;
+    height: 75vh;
+    min-height: 580px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--bg-dark); /* Forest green, matching site-footer */
+    color: var(--white);
+    text-align: center;
+    overflow: hidden;
+    padding: 6rem 0;
+}
+
+.jawai-final-cta-bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    transform: scale(1.05);
+    opacity: 0.45;
+    z-index: 1;
+    transition: transform 10s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.jawai-final-cta-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, 
+        rgba(26, 37, 32, 0.45) 0%, 
+        rgba(26, 37, 32, 0.6) 45%, 
+        rgba(46, 74, 63, 0.8) 80%, 
+        rgba(46, 74, 63, 1) 100%); /* Fades seamlessly into footer background */
+    z-index: 2;
+}
+
+.jawai-final-cta-content {
+    position: relative;
+    z-index: 3;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.jawai-final-cta-content h2 {
+    font-family: var(--font-editorial);
+    font-size: clamp(2.6rem, 5vw, 4.2rem);
+    font-weight: 300;
+    margin-bottom: 1.5rem;
+    line-height: 1.15;
+}
+
+.jawai-final-cta-content h2 span {
+    font-style: italic;
+    font-weight: 400;
+    color: var(--color-gold);
+}
+
+.jawai-final-cta-content p {
+    font-family: var(--font-body);
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    line-height: 1.7;
+    color: var(--text-light-muted);
+    max-width: 650px;
+    margin: 0 auto 3.5rem auto;
+    font-weight: 300;
+}
+
+.jawai-final-cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN ADAPTATIONS
+   ========================================================================== */
+@media (max-width: 991px) {
+    .jawai-editorial-section {
+        padding: 6rem 0;
+    }
+    
+    .essence-split {
+        grid-template-columns: 1fr;
+        gap: 4rem;
+    }
+    
+    .perspective-block {
+        grid-template-columns: 1fr;
+        gap: 3.5rem;
+    }
+    
+    .perspective-block:nth-child(even) .perspective-img-col {
+        order: initial;
+    }
+    
+    .perspective-block:nth-child(even) .perspective-content-col {
+        order: initial;
+    }
+    
+    .seasons-timeline {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+    
+    .season-card {
+        min-height: 380px;
+        padding: 2.5rem 2rem;
+    }
+    
+    .explore-cp-list {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+    
+    .travel-info-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .travel-info-block {
+        padding: 2.5rem 2rem;
+    }
+}
+
+@media (max-width: 767px) {
+    .jawai-editorial-section {
+        padding: 5rem 0;
+    }
+    
+    .jawai-hero-desc {
+        margin-bottom: 2.5rem;
+    }
+    
+    .jawai-final-cta-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+    
+    .jawai-final-cta-buttons .btn {
+        width: 100%;
+        max-width: 320px;
+        text-align: center;
+    }
+    
+    .faq-question-btn {
+        padding: 1.5rem;
+    }
+    
+    .faq-answer-inner {
+        padding: 0 1.5rem 1.5rem 1.5rem;
+    }
+}
